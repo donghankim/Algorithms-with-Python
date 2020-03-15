@@ -1,2 +1,40 @@
 # Algorithms-with-Python
-Various algorithms implemented in python.
+Various algorithms implemented in python
+
+## Introduction
+The purpose of this repository is to help understand and implement various different algorithms. This repository will have the same structure as my data structure with python repository. I will provide a brief description of all the algorithms, and their analysis. Each algorithm will have their own folder in this repository, and examples of "coding interview" equestions regarding those algorithms will also be included in the folder. I am creating this repository as I am writing all of the code and explanation, so make sure you check frequently!
+
+If you find any errors or mistakes, feel free to email me or to request a push commit.
+
+## Recursion
+The basis of recursion is to solve large problems by breaking it into smaller problems of the original problem. Therefore, recursion often involves a function calling itself. However, before you start using recursion, there are three rules you need to follow.
+
+### Three Laws of Recursion
+1. A recursive algorithm must have a base case(will be exaplained with an example).
+2. The recursive algorithm must always change state, and move towards the defined base case.
+3. A recursive algorithm must call itself.
+
+To really understand the three laws of recursion, lets consider an example problem that can be solved using recursion.
+
+#### Sum of Digits
+Given a number, return the sum of all of its individual digits. For example, if the input digit is 1234, then our solution should return 1 + 2 + 3 + 4 which is 10.
+
+```python
+def sum_of_digits(number: int) -> int:
+
+    # base case
+    if number == 0:
+        return 0
+
+    else:
+        #recursive element
+        return number % 10 + sum_of_digits(number // 10)
+
+
+# test case
+print(sum_of_digits(12))  # prints 3
+print(sum_of_digits(123))  # prints 6
+print(sum_of_digits(1000))  # prints 1
+```
+
+From this example, the base case simply helps the recursive algorithm to terminate. Otherwise, the function will run forever. The line after the else statement satisfies the second law because, when we recursively call the sum_of_digits function again, it does so after dividing the current number by 10. Therefore, its helping the function go closer to the base case.
