@@ -16,16 +16,16 @@ def tower_moves(n: int) -> int:
         tower_moves(n - 1)
         moves += 1
 
-# this method explains how the disks are moving --> not working...
+# this method explains how the disks are moving
 def tower_description(n: int, from_, aux, target: str):
     if n == 1:
-        print(f"Moving disk: {n} from {aux} to {target}")
+        print(f"Moving disk: {n} from {from_} to {target}")
         return
 
     else:
         tower_description(n-1, from_, target, aux)
-        print(f"Moving disk: {n} from {from_} to {aux}")
-        tower_description(n-1, target, aux, from_)
+        print(f"Moving disk: {n} from {from_} to {target}")
+        tower_description(n-1, aux, from_, target)
 
 
 # test case
@@ -33,5 +33,4 @@ tower_moves(3)
 print(moves)
 
 tower_description(3, "A", "B", "C")
-
 
