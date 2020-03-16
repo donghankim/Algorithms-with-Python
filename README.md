@@ -16,7 +16,7 @@ The basis of recursion is to solve large problems by breaking it into smaller pr
 
 To really understand the three laws of recursion, lets consider an example problem that can be solved using recursion.
 
-#### Sum of Digits
+### Sum of Digits
 Given a number, return the sum of all of its individual digits. For example, if the input digit is 1234, then our solution should return 1 + 2 + 3 + 4 which is 10.
 
 ```python
@@ -38,3 +38,17 @@ print(sum_of_digits(1000))  # prints 1
 ```
 
 From this example, the base case simply helps the recursive algorithm to terminate. Otherwise, the function will run forever. The line after the else statement satisfies the second law because, when we recursively call the sum_of_digits function again, it does so after dividing the current number by 10. Therefore, its helping the function go closer to the base case.
+
+Recursion can be a little difficult to understand. Looking at the execution sequence of the function above can help you understand how recursion works a little better. This is the execution sequence of the code above:
+```
+sum_of_digits(1234)
+-> 4 + sum_of_digits(123)                                  # 4 + 6 -> 10 returned
+          -> 3 + sum_of_digits(12)                         # 3 + 3
+                    -> 2 + sum_of_digits(1)                # 2 + 1
+                              -> 1 + sum_of_digits(0)      # 1 + 0
+```
+So technically the actual addition of the sum happens when the function reaches the base case. After the base case is reached, the function works its way up adding the appropriate values, and therefore returning 10. The best way to understand recursion is to solve some recursion problems on your own. Check out the Recursion folder to see some practice questions that I solved using recursion.
+
+## Searching Algorithms
+
+
