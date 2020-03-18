@@ -99,8 +99,24 @@ def binary_search(target: int, nums: List[int]) -> int:
 
 ```
 
-Will be updated soon.
+The method binary search uses is an algorithm concept called <strong>divide and conquer</strong>. Similar to recursion, divide and conquer sets out to break down big problems into smaller problems, and works its way back up. You can implement binary search using recursion as well, if you want to see a recursive approach in implementing binary search, you can find it in the recursion folder. The time complexity calculation for binary search is as follows:
 
+```
+while loop iteration:           Number of items in list:
+        1                                  n/2
+        2                                  n/4
+        3                                  n/8
+        i                                  n/2^i
+
+At some point the middle_index is equal to the target. Else, target not found. Thus,
+
+                            n/2^i = 1
+                log(n) - log(2^i) = log(1)
+                log(n) - i*log(2) = 0
+                                i = log(n)/log(2)
+```
+
+Therefore, the time complexity for binary search is O(log n), which is a little better than sequential search.
 
 
 
