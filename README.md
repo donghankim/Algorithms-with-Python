@@ -2,7 +2,7 @@
 Various algorithms implemented in python
 
 ## Introduction
-The purpose of this repository is to help understand and implement various different algorithms. This repository will have the same structure as my data structure with python repository. I will provide a brief description of all the algorithms, and their analysis. Each algorithm will have their own folder in this repository, and examples of "coding interview" equestions regarding those algorithms will also be included in the folder. When doing complexity analysis, I will only explain the worst-case time complexity as that is the metric we are often interested in. I am creating this repository as I am writing all of the code and explanation, so make sure you check frequently!
+The purpose of this repository is to help understand and implement various different algorithms. This repository will have the same structure as my data structure with C repository. I will provide a brief description of all the algorithms, and their analysis. When doing complexity analysis, I will only explain the worst-case time complexity as that is the metric we are often interested in. I am creating this repository as I am writing all of the code and explanation, so make sure you check frequently!
 
 If you find any errors or mistakes, feel free to email me or to request a push commit.
 
@@ -49,7 +49,7 @@ sum_of_digits(1234)
 ```
 So technically the actual addition of the sum happens when the function reaches the base case. After the base case is reached, the function works its way up adding the appropriate values, and therefore returning 10. The best way to understand recursion is to solve some recursion problems on your own. Check out the Recursion folder to see some practice questions that I solved using recursion.
 
-## Search Algorithms (list-based)
+## List Search
 Searching is a very common task in computer science. Some search algorithms answer the question of membership (whether a certain value is in a list), while other search algorithms tell us where the element being searched is located (the index). There are multiple search algorithms out there, and in this repository, I will try to cover the most frequently used ones.
 
 ### Sequential Search
@@ -118,5 +118,15 @@ At some point the middle_index is equal to the target. Else, target not found. T
 
 Therefore, the time complexity for binary search is O(log n), which is a little better than sequential search.
 
+## Tree Search
+Trees are an important non-linear data structures in computer science. A tree is a collection of finite nodes, with the one designated root node (the "top" most node). A link (edge) between two nodes creates a child and parent relation between the two nodes. One key difference between a graph and a tree is that a graph can have cycles, whilst a tree cannot. There are many variations of a tree, but I will not cover all of them here. One popular variation of a tree is a binary tree. A binary tree has a root node, and all of its parent nodes can have at most 2 children node. Here are some popular algorithms that search trees.
+
+### Breadth-First Search (BFS) - Tree
 
 
+
+
+## Graph Search
+Graphs like trees are a non-linear data structure. They are also a very important data strucutre in computer science. A graph is a collection of two finite, non-empty sets; vertecies (V) and edges (E). Mathematically a graph is represented as G = {V,E}. Two adjacent vertecies are joined using edges. Graphs are actually very similar to trees, and most of the search algorithms introduced in the tree search section above are also used for graph searching.
+
+### Breadth-First Search (BFS) - Graph
