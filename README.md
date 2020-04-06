@@ -118,15 +118,33 @@ At some point the middle_index is equal to the target. Else, target not found. T
 
 Therefore, the time complexity for binary search is O(log n), which is a little better than sequential search.
 
-## Tree Search
-Trees are an important non-linear data structures in computer science. A tree is a collection of finite nodes, with the one designated root node (the "top" most node). A link (edge) between two nodes creates a child and parent relation between the two nodes. One key difference between a graph and a tree is that a graph can have cycles, whilst a tree cannot. There are many variations of a tree, but I will not cover all of them here. One popular variation of a tree is a binary tree. A binary tree has a root node, and all of its parent nodes can have at most 2 children node. Here are some popular algorithms that search trees.
-
-### Breadth-First Search (BFS) - Tree
-
-
-
-
 ## Graph Search
-Graphs like trees are a non-linear data structure. They are also a very important data strucutre in computer science. A graph is a collection of two finite, non-empty sets; vertecies (V) and edges (E). Mathematically a graph is represented as G = {V,E}. Two adjacent vertecies are joined using edges. Graphs are actually very similar to trees, and most of the search algorithms introduced in the tree search section above are also used for graph searching.
+Graphs are a non-linear data structure. A graph is a collection of two finite, non-empty sets; vertices (V) and edges (E). Mathematically a graph is represented as G = {V,E}. Two adjacent vertices are joined using edges. The two main types of graphs are directed and undirected graphs. With directed graphs, each edge has a direction that points to the next vertex in the graph. In the case of undirected graphs, the edges have no direction. Graphs have many properties and this simple introduction is not enough to fully understand graphs, so make sure you understand all the properties of graphs before moving on to the algoithms. Also as a side note, graphs are very similar to trees, and for the most part, graph searching algorithms will also work on trees.
 
-### Breadth-First Search (BFS) - Graph
+### Breadth-First Search (BFS)
+Breadth first search is a popular algorithm to traverse undirected graphs, directed graphs and trees. As the name suggest, we are concerned with searching the breadth of the graph first, before going deeper in depth. Because we are visiting every single vertex and edge, the time complexity of BFS is <strong>O(V+E)</strong> where V is the number of vertecies in the graph, and E is the number of edges. You can check out the bfs.py file for the python code for BFS traversal, and BFS search. The code below shows how BFS traverses a given graph (assuming that a graph is implemented using a python dictionary)
+```python
+def bfs_run(graph, start_node):
+    visited = []
+    queue = []
+
+    visited.append(start_node)
+    queue.append(start_node)
+
+    # while queue is not empty
+    while queue:
+        current_node = queue.pop(0)
+
+        for vertex in graph[current_node]:
+            if vertex not in visited:
+                visited.append(vertex)
+                queue.append(vertex)
+
+    # all of the vertices visited
+    print(visited)
+```
+The function above simply traverses through the entire graph. We maintain one queue to help us keep track of which vertex to check next. If the queue is empty, this means we have have no more vertices to check and we have completed our traversal. For every vertex in our queue, we check to see if it has any adjacent vertices. If it does, then we simply insert it into our queue.
+
+### Depth-First Search(BFS)
+Taking a short break...
+
